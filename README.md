@@ -78,4 +78,7 @@ The chatbot forgets everything when it closes. The `practice` files are me learn
 
 ## Get in touch
 
-I'm looking for people to learn from and build with. If you're a founder or engineer and something here caught your eye, open an issue or reach me through my [GitHub profile](https://github.com/Jatingupta9120). Feedback on the code is very welcome.
+I'm looking for people to learn from and build with. If you're a founder or engineer and something here caught your eye, message me on [LinkedIn](https://www.linkedin.com/in/jatin-gupta9120/) or open an issue here. Feedback on the code is very welcome.
+
+- LinkedIn: [linkedin.com/in/jatin-gupta9120](https://www.linkedin.com/in/jatin-gupta9120/)
+- GitHub: [@Jatingupta9120](https://github.com/Jatingupta9120)
