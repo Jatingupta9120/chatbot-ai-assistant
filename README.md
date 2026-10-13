@@ -20,7 +20,8 @@ Memory cleared.
 
 - **Streams replies** token by token, so answers appear as they are generated
 - **Remembers the conversation** by sending the full message history on every turn
-- **`reset`** wipes the memory, **`quit`** exits
+- **Remembers between runs**: every exchange is saved to a local SQLite database and reloaded on start
+- **`reset`** wipes the memory (and the database), **`quit`** exits
 - **Recovers from errors** without corrupting the chat history
 - **Runs offline** once the model is downloaded
 
@@ -49,8 +50,9 @@ Ollama exposes an OpenAI-compatible API at `http://localhost:11434/v1`, so the s
 2. Send the full `messages` list to the model with `stream=True`
 3. Print each chunk as it arrives and collect the reply
 4. Append the reply to `messages` so the next turn has context
+5. Save the exchange to SQLite (`chat.db`), which is loaded back into `messages` the next time you start
 
-That's about 40 lines in [`assistant.py`](assistant.py).
+That's about 70 lines in [`assistant.py`](assistant.py).
 
 ## What's in the repo
 
@@ -58,13 +60,11 @@ That's about 40 lines in [`assistant.py`](assistant.py).
 | --- | --- |
 | `assistant.py` | The chatbot |
 | `index.py` | Connection test: lists installed models and sends one message |
-| `practice.py`, `practice2.py`, `practice3.py` | My SQLite experiments: saving and loading chat messages from a database |
+| `practice.py`, `practice2.py`, `practice3.py` | My SQLite experiments, which became the chatbot's memory |
 
 ## What I'm building next
 
-The chatbot forgets everything when it closes. The `practice` files are me learning SQLite so I can fix that.
-
-- [ ] Persistent memory: save conversations to SQLite and reload them on start
+- [x] Persistent memory: save conversations to SQLite and reload them on start
 - [ ] Multiple named chat sessions
 - [ ] Choose the model and system prompt from the command line
 - [ ] A simple web interface
